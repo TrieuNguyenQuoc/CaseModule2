@@ -3,70 +3,57 @@
 import java.io.Serializable;
 
 public class Room implements Serializable {
-    private String RoomNumber; // số phòng
-    private String KindOfRoom; // loại phòng
-    private int RoomRates; // giá phòng
-    private String Prevention; // phòng chống
-    private String RentedRoom; // phòng đã thuê
-    private String BusinessRoom; // phòng thương gia
-    private String NormalRoom; // phòng thường
+    private String employeeCode;
+    private String name;
+    private int age;
+    private String phone;
+    private String mail;
 
-
-    public Room(String soPhong, String loaiPhong, int gia, String phongChong, String daThue) {
-        this.RoomNumber = soPhong;
-        this.KindOfRoom = loaiPhong;
-        this.RoomRates = gia;
-        this.Prevention = phongChong;
-        this.RentedRoom = daThue;
-//        this.BusinessRoom = thuonggia;
-//        this.NormalRoom = thuong;
+    public Room(String soPhong, String name, int age, String phone, String mail) {
+        this.employeeCode = soPhong;
+        this.name = name;
+        this.age = age;
+        this.phone = phone;
+        this.mail = mail;
     }
 
-    public String getsoPhong() {
-        return RoomNumber;
+    public String getEmployeeCode() {
+        return employeeCode;
     }
 
-    public void setsoPhong(String soPhong) {
-        this.RoomNumber = soPhong;
+    public void setEmployeeCode(String employeeCode) {
+        this.employeeCode = employeeCode;
     }
 
-    public String getloaiPhong() {
-        return KindOfRoom;
+    public String getName() {
+        return name;
     }
 
-    public void setloaiPhong(String loaiPhong) {
-        this.KindOfRoom = loaiPhong;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getgia() {
-        return RoomRates;
+    public int getAge() {
+        return age;
     }
 
-    public void setgai(int gia) {
-        this.RoomRates = gia;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getphongChong() {
-        return Prevention;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setphongChong(String phongChong) {
-        this.Prevention = phongChong;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getdaThue() {
-        return RentedRoom;
+    public String getMail() {
+        return mail;
     }
 
-    public void setdathue(String daThue) {
-        this.RentedRoom = daThue;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
-//    public String getNormalRoom() {
-//        return NormalRoom ;
-//    }
-//
-//    public void setNormalRoom(String employeeCode) {
-//        this.NormalRoom = employeeCode;
-//    }
-
 }
