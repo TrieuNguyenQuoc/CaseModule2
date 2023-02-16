@@ -37,9 +37,8 @@ public class Main {
                            ¦ 5. Hiển thị trung bình lương tất cả nhân viên công ty         ¦
                            ¦ 6. Danh sách nhân viên Fulltime lương thấp hơn trung bình     ¦
                            ¦ 7. Số tiền phải trả cho nhân viên parttime                    ¦
-                           ¦ 8. Bảng lương nhân viên fulltime theo thứ tự từ thấp đến cao  ¦
                            ¦ 0. Thoát khỏi chương trình                                    ¦
-                            --------------------------------------------------------------- 
+                            
                             """);
 
             checkInput = Integer.parseInt(input.nextLine());
