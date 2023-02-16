@@ -64,8 +64,6 @@ public class Main {
                         manager.checkSalaryFullTime());
                 case 7 -> System.out.println("Số tiền công ty trả cho nhân viên cứng là: " +
                         manager.totalSalaryPartTime());
-                case 8 -> System.out.println("Xếp lương nhân viên cứng theo thứ tự từ thấp đến cao: " +
-                        manager.sortSalary());
                 case 0 -> System.out.println("Hẹn gặp lại sau.");
                 default -> System.out.println("Vui lòng nhập lại!");
             }
