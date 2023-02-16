@@ -27,19 +27,19 @@ public class Main {
 
     public static void main(String[] args) {
         do {
-            System.out.println("Menu------------------------");
+            System.out.println("~~~~~~~~~~~~~~~Menu~~~~~~~~~~~~~~~");
             System.out.print("""
-                           --------------------------------------------------------------- 
-                            1. Thêm nhân viên vào danh sách
-                            2. Hiển thị danh sách nhân viên
-                            3. Sửa dữ liệu nhân viên
-                            4. Xóa nhân viên trong danh sách
-                            5. Hiển thị trung bình lương tất cả nhân viên công ty
-                            6. Danh sách nhân viên Fulltime lương thấp hơn trung bình
-                            7. Số tiền phải trả cho nhân viên parttime
-                            8. Bảng lương nhân viên fulltime theo thứ tự từ thấp đến cao
-                            0. Thoát khỏi chương trình
-                           --------------------------------------------------------------- 
+                           ¦---------------------------------------------------------------¦
+                           ¦1. Thêm nhân viên vào danh sách                                ¦
+                           ¦ 2. Hiển thị danh sách nhân viên                               ¦
+                           ¦ 3. Sửa dữ liệu nhân viên                                      ¦
+                           ¦ 4. Xóa nhân viên trong danh sách                              ¦
+                           ¦ 5. Hiển thị trung bình lương tất cả nhân viên công ty         ¦
+                           ¦ 6. Danh sách nhân viên Fulltime lương thấp hơn trung bình     ¦
+                           ¦ 7. Số tiền phải trả cho nhân viên parttime                    ¦
+                           ¦ 8. Bảng lương nhân viên fulltime theo thứ tự từ thấp đến cao  ¦
+                           ¦ 0. Thoát khỏi chương trình                                    ¦
+                            --------------------------------------------------------------- 
                             """);
 
             checkInput = Integer.parseInt(input.nextLine());
@@ -56,7 +56,7 @@ public class Main {
                 }
 
 
-                case 3 -> manager.editStaff(editStaff());
+//                case 3 -> manager.editStaff(editStaff());
 
                 case 4 -> manager.removeStaff();
                 case 5 -> System.out.println("Trung bình lương lương công ty trả cho nhân viên là : " +
@@ -73,9 +73,13 @@ public class Main {
         } while (checkInput != 0);
     }
     public static model.Staff addNewStaff() {
-        System.out.println(" Bạn muốn thêm ai vào công ty:\n" +
-                "1. nhân viên cứng \n" +
-                "2. nhân viên thực tập\n");
+        System.out.println("""
+             ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦       
+             ¦        Bạn muốn thêm ai vào công ty:  ¦  
+             ¦   1. nhân viên cứng                   ¦  
+             ¦   2. nhân viên thực tập               ¦ 
+             ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦   
+        """);
         checkInput = Integer.parseInt(input.nextLine());
         switch (checkInput) {
             String staff = null;
@@ -96,7 +100,8 @@ public class Main {
                 double fine = Integer.parseInt(input.nextLine());
                 double salary = Integer.parseInt(input.nextLine());
                 System.out.print("Nhập vào lương cơ bản: ");
-                return new HardStaff(staff, name, age, phone, email, bonus, fine, salary);
+                HardStaff staff1 = new HardStaff(staff1, name, age, phone, email, bonus, fine, salary);
+                return staff1;
             }
             case 2 -> {
                 System.out.print("Nhập vào mã nhân viên:");
@@ -111,17 +116,21 @@ public class Main {
                 String email = input.nextLine();
                 System.out.print("Nhập số giờ làm việc:");
                 int workingHours = Integer.parseInt(input.nextLine());
-                Intern intern = new Intern(staff, name, age, phone, email, workingHours);
-                return intern;
+//                Intern intern = new Intern(staff, name, age, phone, email, workingHours);
+//                return intern;
             }
             default -> System.out.println("nhập lại, 1 hoặc 2");
         }
         return null;
     }
     public static Staff editStaffe() {
-        System.out.println(" Bạn muốn sửa mục nào:\n" +
-                "1. nhân viên cứng \n" +
-                "2. nhân viên thực tập \n");
+        System.out.println("""
+              ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦        
+              ¦     Bạn muốn sửa mục nào:   ¦   
+              ¦  1. nhân viên cứng          ¦   
+              ¦  2. nhân viên thực tập      ¦
+              ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦  
+        """);
         checkInput = Integer.parseInt(input.nextLine());
         switch (checkInput) {
             case 1 -> {
