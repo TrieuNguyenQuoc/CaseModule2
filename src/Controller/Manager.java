@@ -7,10 +7,12 @@ import model.HardStaff;
 import model.Intern;
 import model.Staff;
 
+import java.io.StringWriter;
 import java.util.*;
 
 public class Manager {
     public List<Staff> staff;
+    private StringWriter nameHardStaff;
 
     public Manager(List<Staff> staff) {
         this.staff = staff;
@@ -66,33 +68,33 @@ public class Manager {
         for (Staff staff : staff) {
             if (staff instanceof HardStaff) {
                 if (((HardStaff) staff).salaryFullTime() < averageSalary()) {
-                    nameEmployeeFullTimes.append("\t").append(staff.getName()).append("\n");
+                    nameHardStaff.append("\t").append(staff.getName()).append("\n");
                 }
             }
-        } return nameEmployeeFullTimes.toString();
+        } return nameHardStaff.toString();
     }
 
     public double totalSalaryPartTime() { // tính tổng lương thực tập
         double totalSalaryParttime = 0;
         for (Staff employee : staff) {
             if (employee instanceof Intern) {
-                totalSalaryParttime += ((Intern) employee).salaryPartTime();
+                totalSalaryParttime += ((Intern) staff).salaryPartTime();
             }
         }
         return totalSalaryParttime;
     }
     public List<HardStaff> sortSalary(){
-        List<HardStaff> employeeFullTimes = new ArrayList<>();
+        List<HardStaff> HardStaff = new ArrayList<>();
         for (Staff staff: staff) {
             if (staff instanceof Staff) {
-                employeeFullTimes.add((HardStaff) staff);
+                model.HardStaff.add((HardStaff) staff);
             }
         }
-        Collections.sort(employeeFullTimes);
-        return employeeFullTimes;
+        Collections.sort(HardStaff);
+        return HardStaff;
     }
 
-    public void editStaff(Staff editEmployee) {
+    public void editStaff(Staff editStaff) {
     }
 
     public void removeStaff() {

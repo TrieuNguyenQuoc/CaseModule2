@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c305383-9249-4b23-bfef-34e5e1d61391" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/HardStaff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Intern.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Staff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/storage/ReadAndWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DeluxeRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/EmployeeFullTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Employee.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +82,7 @@
       <workItem from="1676453020652" duration="152000" />
       <workItem from="1676455657624" duration="18000" />
       <workItem from="1676472730213" duration="2326000" />
-      <workItem from="1676475129070" duration="611000" />
+      <workItem from="1676475129070" duration="2170000" />
     </task>
     <servers />
   </component>

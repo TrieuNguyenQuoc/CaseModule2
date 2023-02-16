@@ -28,21 +28,24 @@ public class Main {
     public static void main(String[] args) {
         do {
             System.out.println("Menu------------------------");
-            System.out.println(
-                    "1. Thêm nhân viên vào danh sách\n" +
-                            "2. Hiển thị danh sách nhân viên\n" +
-                            "3. Sửa dữ liệu nhân viên\n" +
-                            "4. Xóa nhân viên trong danh sách\n" +
-                            "5. Hiển thị trung bình lương tất cả nhân viên công ty\n" +
-                            "6. Danh sách nhân viên Fulltime lương thấp hơn trung bình\n" +
-                            "7. Số tiền phải trả cho nhân viên parttime\n" +
-                            "8. Bảng lương nhân viên fulltime theo thứ tự từ thấp đến cao\n" +
-                            "0. Thoát khỏi chương trình\n");
+            System.out.print("""
+                           --------------------------------------------------------------- 
+                            1. Thêm nhân viên vào danh sách
+                            2. Hiển thị danh sách nhân viên
+                            3. Sửa dữ liệu nhân viên
+                            4. Xóa nhân viên trong danh sách
+                            5. Hiển thị trung bình lương tất cả nhân viên công ty
+                            6. Danh sách nhân viên Fulltime lương thấp hơn trung bình
+                            7. Số tiền phải trả cho nhân viên parttime
+                            8. Bảng lương nhân viên fulltime theo thứ tự từ thấp đến cao
+                            0. Thoát khỏi chương trình
+                           --------------------------------------------------------------- 
+                            """);
 
             checkInput = Integer.parseInt(input.nextLine());
             switch (checkInput) {
                 case 1 -> {
-                    manager.addStaff(addNewEmployee());
+                    manager.addStaff(addNewStaff());
                     demo.writeToFile (Staff);
                 }
                 case 2 -> {
@@ -53,7 +56,7 @@ public class Main {
                 }
 
 
-                case 3 -> manager.editStaff(editEmployee());
+                case 3 -> manager.editStaff(editStaff());
 
                 case 4 -> manager.removeStaff();
                 case 5 -> System.out.println("Trung bình lương lương công ty trả cho nhân viên là : " +
@@ -69,7 +72,7 @@ public class Main {
             }
         } while (checkInput != 0);
     }
-    public static Intern addNewEmployee() {
+    public static model.Staff addNewStaff() {
         System.out.println(" Bạn muốn thêm ai vào công ty:\n" +
                 "1. nhân viên cứng \n" +
                 "2. nhân viên thực tập\n");
@@ -115,7 +118,7 @@ public class Main {
         }
         return null;
     }
-    public static Staff editEmployee() {
+    public static Staff editStaffe() {
         System.out.println(" Bạn muốn sửa thành phần nào:\n" +
                 "1. nhân viên cứng \n" +
                 "2. nhân viên thực tập \n");
@@ -142,7 +145,7 @@ public class Main {
             }
             case 2 -> {
                 System.out.print("Nhập vào mã nhân viên mới: ");
-                String newEmployeeCode = input.nextLine();
+                String newStaff = input.nextLine();
                 System.out.print("Nhập vào tên nhân viên mới: ");
                 String newName = input.nextLine();
                 System.out.print("Nhập vào tuổi: ");
@@ -153,9 +156,9 @@ public class Main {
                 String newEmail = input.nextLine();
                 System.out.print("Nhập số giờ làm việc mới:");
                 int NewWorkingHours = Integer.parseInt(input.nextLine());
-                return new Intern(newEmployeeCode, newName, newAge, newPhone, newEmail, NewWorkingHours);
+                return new Intern(newStaff, newName, newAge, newPhone, newEmail, NewWorkingHours);
             }
-            default -> System.out.println("Xin nhập lại, 1 hoặc 2");
+            default -> System.out.println("Nhập lại, 1 hoặc 2");
         }
         return null;
     }

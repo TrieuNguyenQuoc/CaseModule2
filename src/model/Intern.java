@@ -17,7 +17,7 @@ package model;
         }
 
         public double salaryPartTime() {
-            return getWorkingHours()*100000;
+            return getWorkingHours()*100;
         }
 
         @Override

@@ -57,7 +57,7 @@ import java.io.Serializable;
             Email = email;
         }
 
-        public void add(model.Staff staff) {
+        public static void add(model.Staff staff) {
         }
 
         public double size() {
