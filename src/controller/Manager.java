@@ -1,11 +1,8 @@
-package Controller;
+package controller;
 
 import model.Staff;
 import model.HardStaff;
 import model.Intern;
-import model.HardStaff;
-import model.Intern;
-import model.Staff;
 
 import java.io.StringWriter;
 import java.util.*;

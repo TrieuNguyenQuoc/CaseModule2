@@ -1,6 +1,6 @@
 package views;
 
-import Controller.Manager;
+import controller.Manager;
 import model.Staff;
 import model.HardStaff;
 import model.Intern;
