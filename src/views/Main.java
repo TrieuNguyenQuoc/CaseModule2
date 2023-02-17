@@ -113,8 +113,8 @@ public class Main {
                 String email = input.nextLine();
                 System.out.print("Nhập số giờ làm việc:");
                 int workingHours = Integer.parseInt(input.nextLine());
-//                Intern intern = new Intern(staff, name, age, phone, email, workingHours);
-//                return intern;
+                Intern intern = new Intern(staff, name, age, phone, email, workingHours);
+                return intern;
             }
             default -> System.out.println("nhập lại, 1 hoặc 2");
         }

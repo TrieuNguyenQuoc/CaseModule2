@@ -72,18 +72,18 @@ public class Manager {
     }
 
     public double totalSalaryPartTime() { // tính tổng lương thực tập
-        double totalSalaryParttime = 0;
+        double totalSalaryIntern = 0;
         for (Staff employee : staff) {
             if (employee instanceof Intern) {
-                totalSalaryParttime += ((Intern) staff).salaryPartTime();
+                totalSalaryIntern += ((Intern) staff).salaryPartTime();
             }
         }
-        return totalSalaryParttime;
+        return totalSalaryIntern;
     }
     public List<HardStaff> sortSalary(){
         List<HardStaff> HardStaff = new ArrayList<>();
         for (Staff staff: staff) {
-            if (staff instanceof Staff) {
+            if (staff != null) {
                 model.HardStaff.add((HardStaff) staff);
             }
         }
@@ -91,9 +91,9 @@ public class Manager {
         return HardStaff;
     }
 
-//    public void editStaff(Staff editStaff) {
-//
-//    }
+    public void editStaff(Staff editStaff) {
+
+    }
 
     public void removeStaff() {
     }
