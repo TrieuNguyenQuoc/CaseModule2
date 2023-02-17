@@ -91,9 +91,9 @@ public class Manager {
         return HardStaff;
     }
 
-    public void editStaff(Staff editStaff) {
-
-    }
+//    public void editStaff(Staff editStaff) {
+//
+//    }
 
     public void removeStaff() {
     }
