@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c305383-9249-4b23-bfef-34e5e1d61391" name="Changes" comment="" />
+    <list default="true" id="6c305383-9249-4b23-bfef-34e5e1d61391" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Intern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Intern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/phoneCheck/PhoneCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/phoneCheck/PhoneCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storage/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/ReadAndWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Manager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +56,7 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="views" />
+      <recent name="" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -92,11 +102,30 @@
       <workItem from="1676615761569" duration="453000" />
       <workItem from="1676617311733" duration="242000" />
       <workItem from="1676617838989" duration="406000" />
-      <workItem from="1676622491029" duration="317000" />
+      <workItem from="1676622491029" duration="2442000" />
+      <workItem from="1676819397443" duration="260000" />
+      <workItem from="1676819719562" duration="47000" />
+      <workItem from="1676819802702" duration="129000" />
+      <workItem from="1676819980831" duration="10000" />
+      <workItem from="1676820009101" duration="12000" />
+      <workItem from="1676821085353" duration="77000" />
+      <workItem from="1676821246878" duration="1031000" />
+      <workItem from="1676822316012" duration="1380000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -31,5 +31,9 @@ package model;
                     ", Số giờ làm: " + workingHours +
                     ']' + "\n";
         }
+
+        public double salaryHardStaff() {
+            return 0;
+        }
     }
 

@@ -1,7 +1,5 @@
 package phoneCheck;
 
-import phoneException.PhoneException;
-
 public class PhoneCheck {
     // Ham kiem tra dinh dang so dien thoai
     public void checkPhone(String str) throws PhoneException {
@@ -15,6 +13,11 @@ public class PhoneCheck {
             throw new PhoneException("Loi: Khong dung dinh dang!");
         } else {
             System.out.println("Dung dinh dang so dien thoai!");
+        }
+    }
+
+    private class PhoneException extends Throwable {
+        public PhoneException(Object s) {
         }
     }
 }

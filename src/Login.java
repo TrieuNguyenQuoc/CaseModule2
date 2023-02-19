@@ -1,4 +1,11 @@
+import java.util.Scanner;
+
 public class Login {
+    private Scanner scanner;
+    private String username;
+    private int password;
+    private Object managerLecturers;
+
     public boolean loGinUserName(){
         System.out.println("xin mời nhập tên đang nhập");
         String username1=scanner.nextLine();
@@ -13,7 +20,9 @@ public class Login {
         }else return false;
     }public void checkLogin(){
         if (loGinUserName()&&loginPassword()){
-            managerLecturers.menuManager();
+            boolean equals;
+            if (managerLecturers.equals(1)) equals = true;
+            else equals = false;
         }else {
             System.out.println("xin mời đăng nhập lại");
             checkLogin();

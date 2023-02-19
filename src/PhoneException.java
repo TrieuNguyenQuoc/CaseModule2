@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class PhoneException {
+public class PhoneException extends Exception {
+    // Ham khoi tao
+    public PhoneException(String str) {
+        super(str);
+    }
 }
+
