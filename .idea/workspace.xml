@@ -6,11 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="6c305383-9249-4b23-bfef-34e5e1d61391" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseModule2/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseModule2/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseModule2/controller/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseModule2/controller/Manager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseModule2/model/HardStaff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseModule2/model/HardStaff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseModule2/model/Intern.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseModule2/model/Intern.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseModule2/model/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseModule2/model/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseModule2/views/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseModule2/views/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseModule2/views/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseModule2/views/Manager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhoneException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/HardStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/HardStaff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Intern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Intern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Staff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/phoneCheck/PhoneCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/phoneCheck/PhoneCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storage/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storage/ReadAndWrite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Manager.java" afterDir="false" />
     </list>
@@ -110,7 +118,12 @@
       <workItem from="1676820009101" duration="12000" />
       <workItem from="1676821085353" duration="77000" />
       <workItem from="1676821246878" duration="1031000" />
-      <workItem from="1676822316012" duration="1380000" />
+      <workItem from="1676822316012" duration="1654000" />
+      <workItem from="1676855218696" duration="3064000" />
+      <workItem from="1676858346761" duration="272000" />
+      <workItem from="1676863343027" duration="814000" />
+      <workItem from="1676864823180" duration="262000" />
+      <workItem from="1676865430841" duration="424000" />
     </task>
     <servers />
   </component>
@@ -127,5 +140,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/model/Staff.java</url>
+          <line>8</line>
+          <properties field="Phone" class="model.Staff" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

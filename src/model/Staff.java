@@ -21,50 +21,30 @@ import java.io.Serializable;
             return Staff;
         }
 
-        public void setStaff(String staff) {
-            Staff = staff;
-        }
-
         public String getName() {
             return Name;
-        }
-
-        public void setName(String name) {
-            Name = name;
         }
 
         public int getAge() {
             return Age;
         }
 
-        public void setAge(int age) {
-            Age = age;
-        }
-
         public String getPhone() {
             return Phone;
-        }
-
-        public void setPhone(String phone) {
-            Phone = phone;
         }
 
         public String getEmail() {
             return Email;
         }
 
-        public void setEmail(String email) {
-            Email = email;
-        }
-
-        public static void add(model.Staff staff) {
+        public static void add() {
         }
 
         public double size() {
             return 0;
         }
 
-        public void set(double i, Staff staff) {
+        public void set(double i) {
 
         }
     }

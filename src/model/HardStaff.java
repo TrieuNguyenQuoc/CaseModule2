@@ -43,7 +43,7 @@
 
         @Override
         public String toString() {
-            return "Nhân viên Fulltime: [ " +
+            return "Nhân viên cứng: [ " +
                     "Mã nhân viên: " + getStaff() +
                     ", Tên: " + getName() +
                     ", Tuổi: " + getAge() +

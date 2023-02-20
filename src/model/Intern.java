@@ -12,10 +12,6 @@ package model;
             return workingHours;
         }
 
-        public void setWorkingHours(int workingHours) {
-            this.workingHours = workingHours;
-        }
-
         public double salaryPartTime() {
             return getWorkingHours()*100;
         }

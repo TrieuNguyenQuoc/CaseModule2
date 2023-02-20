@@ -4,7 +4,14 @@ public class Login {
     private Scanner scanner;
     private String username;
     private int password;
-    private Object managerLecturers;
+    private Object Staff;
+
+    public Login (Scanner scanner, String username, int password, Object staff) {
+        this.scanner = scanner;
+        this.username = username;
+        this.password = password;
+        Staff = staff;
+    }
 
     public boolean loGinUserName(){
         System.out.println("xin mời nhập tên đang nhập");
@@ -20,9 +27,9 @@ public class Login {
         }else return false;
     }public void checkLogin(){
         if (loGinUserName()&&loginPassword()){
-            boolean equals;
-            if (managerLecturers.equals(1)) equals = true;
-            else equals = false;
+            boolean staff;
+            if (Staff.equals(1)) staff = true;
+            else staff = false;
         }else {
             System.out.println("xin mời đăng nhập lại");
             checkLogin();

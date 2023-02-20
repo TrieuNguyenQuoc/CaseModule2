@@ -11,17 +11,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static List<Staff> employees;
+    public static List<Staff> Staff;
     private static List<Staff> staff;
 
     static {
         try {
-            employees = ReadAndWrite.readDataFromFile();
+            staff = ReadAndWrite.readDataFromFile();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-    public static Manager manager = new Manager(employees);
+    public static Manager manager = new Manager(staff);
     public static ReadAndWrite demo = new ReadAndWrite();
     public static Scanner input = new Scanner(System.in);
     public static int checkInput;
@@ -47,25 +47,25 @@ public class Main {
             checkInput = Integer.parseInt(input.nextLine());
             switch (checkInput) {
                 case 1 -> {
-                    manager.addStaff(addNewEmployee());
+                    manager.addStaff(addNewStaff());
                     demo.writeToFile (staff);
                 }
                 case 2 -> {
                     List<Staff> list = demo.readDataFromFile();
-                    for (Staff demo: list) {
-                        System.out.println(demo);
+                    for (Staff demoCase: list) {
+                        System.out.println(demoCase);
                     }
                 }
 
 
                 case 3 -> manager.editStaff(editStaff());
-                case 4 -> manager.removeStaff();
+//                case 4 -> manager.editStaff(editStaff());
                 case 5 -> System.out.println("Trung bình lương tất cả nhân viên công ty là : " +
                         manager.averageSalary());
                 case 6 -> System.out.println("Danh sách nhân viên Fulltime lương thấp hơn trung bình: " +
                         manager.checkSalaryHardStaff());
                 case 7 -> System.out.println("Số tiền phải trả cho nhân viên parttime là: " +
-                        manager.totalSalaryIntern());
+                        manager.totalSalaryIntern ());
                 case 8 -> System.out.println("Xếp lương nhân viên fulltime theo thứ tự từ thấp đến cao: " +
                         manager.sortSalary());
                 case 0 -> System.out.println("Hẹn gặp lại sau.");
@@ -79,7 +79,7 @@ public class Main {
         return null;
     }
 
-    public static Staff addNewEmployee() {
+    public static Staff addNewStaff() {
         System.out.println("""
                 ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦
                 ¦    Bạn muốn thêm thành phần nào:¦
@@ -122,55 +122,6 @@ public class Main {
                 System.out.print("Nhập số giờ làm việc:");
                 int workingHours = Integer.parseInt(input.nextLine());
                 return new Intern(employeeCode, name, age, phone, email, workingHours);
-            }
-            default -> System.out.println("Xin nhập lại, 1 hoặc 2");
-        }
-        return null;
-    }
-    public static Staff editEmployee() {
-        System.out.println("""
-                ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦
-                ¦Bạn muốn sửa thành phần nào:¦
-                ¦1. nhân viên fulltime       ¦
-                ¦2. nhân viên parttime       ¦
-                ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦
-                """);
-
-        checkInput = Integer.parseInt(input.nextLine());
-        switch (checkInput) {
-            case 1 -> {
-                System.out.print("Nhập vào mã nhân viên mới:");
-                String newEmployeeCode = input.nextLine();
-                System.out.print("Nhập vào tên nhân viên mới:");
-                String newName = input.nextLine();
-                System.out.print("Nhập vào tuổi:");
-                int newAge = Integer.parseInt(input.nextLine());
-                System.out.print("Nhập vào sđt mới:");
-                String newPhone = input.nextLine();
-                System.out.print("Nhập vào email mới:");
-                String newEmail = input.nextLine();
-                System.out.print("Nhập vào tiền thưởng mới:");
-                double Newbonus = Integer.parseInt(input.nextLine());
-                System.out.print("Nhập vào tiền phạt mới:");
-                double Newfine = Integer.parseInt(input.nextLine());
-                System.out.print("Nhập vào lương cơ bản của nhân viên mới:");
-                double newSalary = Integer.parseInt(input.nextLine());
-                return new HardStaff(newEmployeeCode, newName, newAge, newPhone, newEmail,Newbonus, Newfine, newSalary);
-            }
-            case 2 -> {
-                System.out.print("Nhập vào mã nhân viên mới: ");
-                String newEmployeeCode = input.nextLine();
-                System.out.print("Nhập vào tên nhân viên mới: ");
-                String newName = input.nextLine();
-                System.out.print("Nhập vào tuổi: ");
-                int newAge = Integer.parseInt(input.nextLine());
-                System.out.print("Nhập vào sđt mới: ");
-                String newPhone = input.nextLine();
-                System.out.print("Nhập vào email mới: ");
-                String newEmail = input.nextLine();
-                System.out.print("Nhập số giờ làm việc mới:");
-                int NewWorkingHours = Integer.parseInt(input.nextLine());
-                return new Intern(newEmployeeCode, newName, newAge, newPhone, newEmail, NewWorkingHours);
             }
             default -> System.out.println("Xin nhập lại, 1 hoặc 2");
         }

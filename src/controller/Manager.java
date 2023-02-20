@@ -15,7 +15,7 @@ public class Manager {
         this.staff = staff;
     }
     public void addStaff(Staff staff) {
-        staff.add(staff);
+        staff.add();
     } // thêm đối tượng
 
     public void display() { // in theo cách thường
@@ -31,7 +31,7 @@ public class Manager {
         index = input.nextInt();
         for (int i = 0; i < staff.size(); i++) {
             if (i == index) {
-                staff.set(i, staff);
+                staff.set(i);
             }
         }
     }
@@ -84,7 +84,7 @@ public class Manager {
         List<HardStaff> HardStaff = new ArrayList<>();
         for (Staff staff: staff) {
             if (staff != null) {
-                model.HardStaff.add((HardStaff) staff);
+                model.HardStaff.add();
             }
         }
         Collections.sort(HardStaff);

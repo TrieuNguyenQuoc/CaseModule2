@@ -7,95 +7,81 @@ import model.Intern;
 import java.util.*;
 
 public class Manager {
-    public List<Staff> employees;
+    public List<Staff> staff;
 
-    public Manager(List<Staff> employees) {
-        this.employees = employees;
+    public Manager(List<Staff> staff) {
+        this.staff = staff;
     }
-    public void addEmployee(Staff employee) {
-        employees.add(employee);
+    public void aadStaff(Staff staff) {
+        staff.add();
     } // thêm đối tượng
 
     public void display() { // in theo cách thường
-        for (Staff staff : employees) {
+        for (Staff staff : staff) {
             System.out.println(staff);
         }
     }
 
     int index;
     Scanner input = new Scanner(System.in);
-    public void editEmployee(Staff staff) {
+    public void editStaff(Staff staff) {
         System.out.print("Nhập vị trí muốn sửa: ");
         index = input.nextInt();
-        for (int i = 0; i < employees.size(); i++) {
+        for (int i = 0; i < staff.size(); i++) {
             if (i == index) {
-                employees.set(i, staff);
-            }
-        }
-    }
-
-    public void removeEmployee() {
-        System.out.print("Nhập vị trí muốn xóa: ");
-        index = input.nextInt();
-        for (int i = 0; i < employees.size(); i++) {
-            if (i == index) {
-                employees.remove(i);
+                staff.set(i);
             }
         }
     }
 
     public double averageSalary() { // trung bingf lương
         double totalSalary = 0;
-        double averageSalary = 0;
-        for (Staff employee : employees) {
-            if (employee instanceof Intern) {
-                totalSalary += ((Intern) employee).salaryPartTime();
+        for (Staff staff : staff) {
+            if (staff instanceof Intern) {
+                totalSalary += ((Intern) staff).salaryPartTime();
             }
-            if (employee instanceof HardStaff) {
-                totalSalary += ((Intern) employee).salaryHardStaff();
+            if (staff instanceof HardStaff) {
+                totalSalary += ((Intern) staff).salaryHardStaff();
             }
         }
-        return averageSalary = totalSalary / employees.size(); // số lượng ptu trong mảng
+        return totalSalary / staff.size(); // số lượng ptu trong mảng
     }
 
     public String checkSalaryHardStaff() { // lấy danh sách nv full lương thấp hơn bt
-        StringBuilder nameEmployeeFullTimes = new StringBuilder();
-        for (Staff employee : employees) {
-            if (employee instanceof HardStaff) {
-                if (((HardStaff) employee).salaryFullTime() < averageSalary()) {
-                    nameEmployeeFullTimes.append("\t").append(employee.getName()).append("\n");
+        StringBuilder nameHardStaff = new StringBuilder();
+        for (Staff staff : staff) {
+            if (staff instanceof HardStaff) {
+                if (((HardStaff) staff).salaryFullTime() < averageSalary()) {
                 }
             }
-        } return nameEmployeeFullTimes.toString();
+        } return nameHardStaff .toString();
     }
 
-    public double totalSalaryPartTime() { // tính tổng lương part
-        double totalSalaryParttime = 0;
-        for (Staff employee : employees) {
-            if (employee instanceof Intern) {
-                totalSalaryParttime += ((Intern) employee).salaryPartTime();
-            }
-        }
-        return totalSalaryParttime;
-    }
+//    public String totalSalaryIntern() { // tính tổng lương part
+//        double totalSalaryHardStaff  = 0;
+//        for (Staff staff : staff) {
+//            if (staff instanceof Intern) {
+//                totalSalaryHardStaff  += ((Intern) staff).salaryPartTime();
+//            }
+//        }
+////        return totalSalaryIntern();
+//    }
     public List<HardStaff> sortSalary(){
-        List<HardStaff> employeeFullTimes = new ArrayList<>();
-        for (Staff staff: employees) {
+        List<HardStaff> staffsHardStaff  = new ArrayList<>();
+        for (Staff staff: staff) {
             if (staff instanceof HardStaff) {
-                employeeFullTimes.add((HardStaff) staff);
+                HardStaff .add();
             }
         }
-        Collections.sort(employeeFullTimes);
-        return employeeFullTimes;
+        List<HardStaff> HardStaff = null;
+        Collections.sort(HardStaff );
+        return HardStaff ;
     }
 
     public void editStaff(Object editStaff) {
     }
 
-    public void removeStaff() {
-    }
-
-    public String totalSalaryIntern() {
+    public String totalSalaryIntern ( ) {
         return null;
     }
 
