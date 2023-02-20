@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-    public class Staff implements Serializable {
+public class Staff implements Serializable{
         private String Staff;
         private String Name;
         private int Age;

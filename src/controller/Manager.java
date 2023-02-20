@@ -1,77 +1,52 @@
 package controller;
 
-import model.Staff;
 import model.HardStaff;
 import model.Intern;
+import model.Staff;
+import storage.ReadAndWrite;
 
-import java.io.StringWriter;
 import java.util.*;
 
 public class Manager {
+    ReadAndWrite readAndWrite = new ReadAndWrite();
     public List<Staff> staff;
-    private StringWriter nameHardStaff;
 
-    public Manager(List<Staff> staff) {
-        this.staff = staff;
-    }
-    public void addStaff(Staff staff) {
-        staff.add();
-    } // thêm đối tượng
-
-    public void display() { // in theo cách thường
-        for (Staff staff : staff) {
-            System.out.println(staff);
-        }
+    public Manager (List<Staff> staff) {
+        this.staff = readAndWrite.readDataFromFile();
     }
 
-    int index;
-    Scanner input = new Scanner(System.in);
-    public void editstaff(Staff staff) {
-        System.out.print("Nhập vị trí muốn sửa: ");
-        index = input.nextInt();
-        for (int i = 0; i < staff.size(); i++) {
-            if (i == index) {
-                staff.set(i);
-            }
-        }
-    }
+    public Scanner scanner = new Scanner(System.in);
 
-    public void removestaff() {
-        System.out.print("Nhập vị trí muốn xóa: ");
-        index = input.nextInt();
-        for (int i = 0; i < staff.size(); i++) {
-            if (i == index) {
-                staff.remove(i);
-            }
-        }
-    }
 
-    public double averageSalary() { // trung bingf lương
-        double totalSalary = 0;
-        double averageSalary = 0;
+    public double averageSalary ( ) { // trung bingf lương
+        double totalSalary;
+        double averageSalary=0;
+        double averageSalary1=0;
         for (Staff staff : staff) {
             if (staff instanceof Intern) {
-                totalSalary += ((Intern) staff).salaryPartTime();
+                averageSalary += ((Intern) staff).salaryPartTime();
             }
             if (staff instanceof Staff) {
-                totalSalary += ((HardStaff) staff).salaryFullTime();
+                averageSalary1 += ((HardStaff) staff).salaryFullTime();
             }
         }
-        return averageSalary = totalSalary / staff.size(); // số lượng ptu trong mảng
+         totalSalary = (averageSalary+averageSalary1) / staff.size(); // số lượng ptu trong mảng
+        return totalSalary;
     }
 
-    public String checkSalaryFullTime() { // lấy danh sách nv full lương thấp hơn bt
+    public String checkSalaryFullTime ( ) { // lấy danh sách nv full lương thấp hơn bt
         StringBuilder nameEmployeeFullTimes = new StringBuilder();
         for (Staff staff : staff) {
             if (staff instanceof HardStaff) {
                 if (((HardStaff) staff).salaryFullTime() < averageSalary()) {
-                    nameHardStaff.append("\t").append(staff.getName()).append("\n");
+                    nameEmployeeFullTimes.append("\t").append(staff.getName()).append("\n");
                 }
             }
-        } return nameHardStaff.toString();
+        }
+        return nameEmployeeFullTimes.toString();
     }
 
-    public double totalSalaryPartTime() { // tính tổng lương thực tập
+    public double totalSalaryPartTime ( ) { // tính tổng lương thực tập
         double totalSalaryIntern = 0;
         for (Staff employee : staff) {
             if (employee instanceof Intern) {
@@ -80,21 +55,44 @@ public class Manager {
         }
         return totalSalaryIntern;
     }
-    public List<HardStaff> sortSalary(){
-        List<HardStaff> HardStaff = new ArrayList<>();
-        for (Staff staff: staff) {
-            if (staff != null) {
-                model.HardStaff.add();
+
+    public void removeStaffs ( ) {
+        System.out.print("Nhập vị trí muốn xóa: ");
+        int index = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < staff.size(); i++) {
+            if (i == index) {
+                staff.remove(i);
             }
         }
-        Collections.sort(HardStaff);
-        return HardStaff;
     }
 
-//    public void editStaff(Staff editStaff) {
-//
-//    }
+    public void sortSalary ( ) {
+        staff.sort(new Comparator<Staff>() {
+            @Override
+            public int compare (Staff o1, Staff o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+    }
 
-    public void removeStaff() {
+    public void editStaff(Staff employee, String id) {
+        for (int i = 0; i < staff.size(); i++) {
+            if (id.equals(staff.get(i).getStaff())) {
+                staff.set(i, employee);
+                break;
+            }
+        }
+        readAndWrite.writeToFile(staff);
+    }
+
+    public void addStaff (Staff staffs) {
+        staff.add(staffs);
+        readAndWrite.writeToFile(staff);
+    }
+
+    public void display ( ) { // in theo cách thường
+        for (Staff staff : staff) {
+            System.out.println(staff);
+        }
     }
 }

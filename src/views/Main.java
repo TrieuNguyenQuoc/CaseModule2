@@ -1,7 +1,7 @@
 package views;
 
-//import Controller.Manager;
 
+import controller.Manager;
 import model.HardStaff;
 import model.Intern;
 import model.Staff;
@@ -11,27 +11,27 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static List<Staff> Staff;
-    private static List<Staff> staff;
-
+    private static List<Staff> staffs;
     static {
         try {
-            staff = ReadAndWrite.readDataFromFile();
+            staffs = ReadAndWrite.readDataFromFile();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-    public static Manager manager = new Manager(staff);
+    public static Manager manager = new Manager(staffs);
+
     public static ReadAndWrite demo = new ReadAndWrite();
     public static Scanner input = new Scanner(System.in);
     public static int checkInput;
 
 
     public static void main(String[] args) {
+
         do {
             System.out.println("----------Menu----------");
             System.out.println("""
-                            ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦
+                            ¦---------------------------------------------------------------¦
                             ¦1. Thêm nhân viên vào danh sách                                ¦
                             ¦2. Hiển thị danh sách nhân viên                                ¦
                             ¦3. Sửa dữ liệu nhân viên                                       ¦
@@ -40,52 +40,44 @@ public class Main {
                             ¦6. Danh sách nhân viên Fulltime lương thấp hơn trung bình      ¦
                             ¦7. Số tiền phải trả cho nhân viên parttime                     ¦
                             ¦8. Bảng lương nhân viên fulltime theo thứ tự từ thấp đến cao   ¦
-                            ¦9. số nhân viên hiện có của công ty                            ¦
                             ¦0. Thoát khỏi chương trình                                     ¦
-                            ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦
+                            ¦---------------------------------------------------------------¦
                             """);
             checkInput = Integer.parseInt(input.nextLine());
             switch (checkInput) {
                 case 1 -> {
                     manager.addStaff(addNewStaff());
-                    demo.writeToFile (staff);
+
                 }
                 case 2 -> {
-                    List<Staff> list = demo.readDataFromFile();
-                    for (Staff demoCase: list) {
-                        System.out.println(demoCase);
-                    }
+                    manager.display();
                 }
-
-
-                case 3 -> manager.editStaff(editStaff());
-//                case 4 -> manager.editStaff(editStaff());
+                case 3 -> editStaffs();
+                case 4 -> manager.removeStaffs();
                 case 5 -> System.out.println("Trung bình lương tất cả nhân viên công ty là : " +
                         manager.averageSalary());
                 case 6 -> System.out.println("Danh sách nhân viên Fulltime lương thấp hơn trung bình: " +
-                        manager.checkSalaryHardStaff());
+                        manager.checkSalaryFullTime());
                 case 7 -> System.out.println("Số tiền phải trả cho nhân viên parttime là: " +
-                        manager.totalSalaryIntern ());
-                case 8 -> System.out.println("Xếp lương nhân viên fulltime theo thứ tự từ thấp đến cao: " +
-                        manager.sortSalary());
+                        manager.averageSalary ());
+                case 8 -> {
+                    System.out.println("Xếp lương nhân viên fulltime theo thứ tự từ thấp đến cao: ");
+                    manager.sortSalary();
+                }
                 case 0 -> System.out.println("Hẹn gặp lại sau.");
                 default -> System.out.println("Vui lòng nhập lại!");
             }
         } while (checkInput != 0);
     }
 
-    private static Object editStaff() {
-
-        return null;
-    }
 
     public static Staff addNewStaff() {
         System.out.println("""
-                ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦
+                ¦---------------------------------¦
                 ¦    Bạn muốn thêm thành phần nào:¦
                 ¦1. nhân viên fulltime            ¦
                 ¦2. nhân viên parttime            ¦
-                ¦~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~¦
+                ¦---------------------------------¦
                 """);
         checkInput = Integer.parseInt(input.nextLine());
         switch (checkInput) {
@@ -107,6 +99,7 @@ public class Main {
                 System.out.print("Nhập vào lương cơ bản: ");
                 double salary = Integer.parseInt(input.nextLine());
                 return new HardStaff(employeeCode, name, age, phone, email, bonus, fine, salary);
+
             }
             case 2 -> {
                 System.out.print("Nhập vào mã nhân viên:");
@@ -126,5 +119,62 @@ public class Main {
             default -> System.out.println("Xin nhập lại, 1 hoặc 2");
         }
         return null;
+    }
+    public static void editStaffs() {
+        if (staffs.isEmpty()) {
+            System.out.println("Danh sách trống!");
+        } else {
+            String newName;
+            int newAge;
+            String address;
+            String newPhone;
+            String newEmail;
+            double newHardSalary;
+            int newWorkTime;
+            Staff staff;
+            int bonus;
+            int fine;
+            System.out.println(" Nhập id muốn sửa: ");
+            String id = input.nextLine();
+            for (Staff e : staffs) {
+                if (id.equals(e.getStaff())) {
+                    if (e instanceof HardStaff) {
+                        System.out.println("Nhập tên :");
+                        newName = input.nextLine();
+                        System.out.println("Nhập tuổi: ");
+                        newAge = input.nextInt();
+                        System.out.println(" Nhập địa chỉ:");
+                        address = input.nextLine();
+                        System.out.println("SĐT: ");
+                        newPhone = input.nextLine();
+                        System.out.println("Nhập email: ");
+                        newEmail = input.nextLine();
+                        System.out.println(" Lương cứng: ");
+                        newHardSalary = input.nextInt();
+                        System.out.println("bonus: ");
+                        bonus = input.nextInt();
+                        System.out.println("bonus: ");
+                        fine = input.nextInt();
+                        staff = new HardStaff(id, newName, newAge, newPhone, newEmail,bonus,fine, newHardSalary);
+                        manager.editStaff(staff,id);
+                    } else if (e instanceof Intern) {
+                        System.out.println("Mời bạn nhập tên nhân viên : ");
+                        newName = input.nextLine();
+                        System.out.println("Mời bạn nhập tuổi nhân viên : ");
+                        newAge = input.nextInt();
+                        System.out.println("xin moi bạn nhap so dien thoai");
+                        newPhone = input.nextLine();
+                        System.out.println("Mời bạn nhập số giờ làm việc : ");
+                        newWorkTime = input.nextInt();
+                        System.out.println("Mời bạn nhập địa chỉ nhân viên : ");
+                        newEmail = input.nextLine();
+                        System.out.println("xin moi nhap so gio lam");
+                        newWorkTime=input.nextInt();
+                        staff = new Intern(id, newName, newAge, newPhone,newEmail,newWorkTime);
+                        manager.editStaff(staff, id);
+                    }
+                }
+            }
+        }
     }
 }

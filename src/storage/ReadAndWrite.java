@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWrite {
-    public static void writeToFile(List<Staff> students) {
+    public  void writeToFile(List<Staff> students) {
         try {
             FileOutputStream fos = new FileOutputStream("demoCase.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -19,7 +19,7 @@ public class ReadAndWrite {
         }
     }
 
-    public static List<Staff> readDataFromFile(){
+    public static List<Staff> readDataFromFile ( ){
         List<Staff> Staff = new ArrayList<>();
         try{
             FileInputStream fis = new FileInputStream("demoCase.txt");

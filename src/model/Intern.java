@@ -1,7 +1,7 @@
 package model;
 
     public class Intern extends Staff {
-        private int workingHours;// số h làm
+        private int workingHours;
 
         public Intern(String employeeCode, String name, int age, String phone, String email, int workingHours) {
             super(employeeCode, name, age, phone, email);
@@ -26,10 +26,6 @@ package model;
                     ", Email: " + getEmail() +
                     ", Số giờ làm: " + workingHours +
                     ']' + "\n";
-        }
-
-        public double salaryHardStaff() {
-            return 0;
         }
     }
 
